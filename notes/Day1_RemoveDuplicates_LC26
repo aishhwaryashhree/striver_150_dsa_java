@@ -1,0 +1,33 @@
+## 🔹 Remove Duplicates (Sorted Array)
+
+### 1. Problem
+Given a sorted array, remove duplicates in-place such that each element appears only once and return the new length.
+
+### 2. V1 (Brute)
+- Use a Set to store unique elements
+- Copy back to array
+
+Time: O(n)  
+Space: O(n)
+
+### 3. My Stuck
+- Initially thought of using extra space (set)
+- Didn’t realize sorted property can be used
+- Confused about how to overwrite in-place
+
+### 4. V2 (Optimal)
+- Use two pointers
+- `i` tracks unique position
+- `j` traverses array
+- If `nums[j] != nums[i]`:
+  - increment `i`
+  - assign `nums[i] = nums[j]`
+
+### 5. Why is it Better
+- Uses sorted property
+- No extra space
+- In-place modification → O(1) space
+
+### 6. Test
+Input: [1,1,2,2,3]  
+Output: [1,2,3,_ , _] → length = 3
